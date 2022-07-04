@@ -1,13 +1,3 @@
-#================================================================
-#
-#   File name   : indicators.py
-#   Author      : PyLessons
-#   Created date: 2021-02-25
-#   Website     : https://pylessons.com/
-#   GitHub      : https://github.com/pythonlessons/RL-Bitcoin-trading-bot
-#   Description : Used to plot 5 indicators with OHCL bars and etc.
-#
-#================================================================
 import pandas as pd
 from ta.trend import SMAIndicator, macd, PSARIndicator
 from ta.volatility import BollingerBands
@@ -98,9 +88,6 @@ def get_volatility_indicators(df, threshold=0.5, plot=False):
 def get_volume_indicators(df, threshold=0.5, plot=False):
     df_volume = df.copy()
     
-    # add custom volume indicators
-    # ...
-
     df_volume = add_volume_ta(df_volume, high="High", low="Low", close="Close", volume="Volume")
 
     return DropCorrelatedFeatures(df_volume, threshold, plot)
@@ -108,9 +95,6 @@ def get_volume_indicators(df, threshold=0.5, plot=False):
 def get_momentum_indicators(df, threshold=0.5, plot=False):
     df_momentum = df.copy()
     
-    # add custom momentum indicators
-    # ...
-
     df_momentum = add_momentum_ta(df_momentum, high="High", low="Low", close="Close", volume="Volume")
 
     return DropCorrelatedFeatures(df_momentum, threshold, plot)
@@ -118,8 +102,6 @@ def get_momentum_indicators(df, threshold=0.5, plot=False):
 def get_others_indicators(df, threshold=0.5, plot=False):
     df_others = df.copy()
     
-    # add custom indicators
-    # ...
 
     df_others = add_others_ta(df_others, close="Close")
 
@@ -128,8 +110,6 @@ def get_others_indicators(df, threshold=0.5, plot=False):
 def get_all_indicators(df, threshold=0.5, plot=False):
     df_all = df.copy()
     
-    # add custom indicators
-    # ...
 
     df_all = add_all_ta_features(df_all, open="Open", high="High", low="Low", close="Close", volume="Volume")
 
