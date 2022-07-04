@@ -1,1 +1,1 @@
-# Trading with LSTM & Reinforcemet Learning
+# Trading with LSTM & Reinforcemet Learning Ahmed
