@@ -1,13 +1,3 @@
-#================================================================
-#
-#   File name   : model.py
-#   Author      : PyLessons
-#   Created date: 2021-01-13
-#   Website     : https://pylessons.com/
-#   GitHub      : https://github.com/pythonlessons/RL-Bitcoin-trading-bot
-#   Description : defined PPO Keras model classes
-#
-#================================================================
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import Model
@@ -72,7 +62,7 @@ class Shared_Model:
         #print(self.Actor.summary())
 
     def ppo_loss(self, y_true, y_pred):
-        # Defined in https://arxiv.org/abs/1707.06347
+
         advantages, prediction_picks, actions = y_true[:, :1], y_true[:, 1:1+self.action_space], y_true[:, 1+self.action_space:]
         LOSS_CLIPPING = 0.2
         ENTROPY_LOSS = 0.001
