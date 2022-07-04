@@ -1,1 +1,1 @@
-# Trading-with-LSTM-Reinforcement-Learning-
+# Trading with LSTM & Reinforcemet Learning
